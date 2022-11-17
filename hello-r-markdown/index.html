@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1"><title>Hello R Markdown - Antonela Miho</title>
+<meta property="og:title" content="Hello R Markdown - Antonela Miho">
+<meta property="og:type" content="article">
+
+
+<meta property="og:image" content="img/MIHO_Antonela_Photo.jpg">
+
+<meta property="og:url" content="https://antonelamiho.github.io/hello-r-markdown/">
+
+
+
+<meta property="keywords" content ="r markdown, plot, regression">
+
+
+
+<link rel="stylesheet" href="https://antonelamiho.github.io/css/style.min.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link href="https://antonelamiho.github.io/index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
+<meta name="theme-color" content="#ffffff">
+
+
+<script>function updateMode(){localStorage.theme==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}function toggleMode(){localStorage.theme==="dark"?localStorage.theme="light":localStorage.theme="dark",updateMode()}window.onload=updateMode();function toggleMenu(){let e=document.getElementById("navbar-default");e.classList.contains("hidden")?e.classList.remove("hidden"):e.classList.add("hidden")}</script>
+
+  </head>
+  <body>
+    <header class="md:px-0 px-2">
+        <nav >
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <div class="nav-main my-2.5">
+      <a href="https://antonelamiho.github.io/" class="nav-title py-2.5 text-2xl
+               text-zinc-600 dark:text-zinc-300 hover:border-b-0">Antonela Miho</a>
+    </div>
+    <button type="button"
+            onclick="toggleMenu()"
+            class="inline-flex items-center p-2 ml-3
+                  text-sm text-gray-500
+                  rounded-lg md:hidden hover:bg-gray-100
+                  focus:outline-none focus:ring-2
+                  focus:ring-gray-200 dark:text-gray-400
+                  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor"
+             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1
+                           0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                           01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                           01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="grid md:grid-flow-col items-center justify-between text-lg my-2.5">
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/research/research">Research</a>
+        </li>
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/teaching/courses">Teaching</a>
+        </li>
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/cv/cv">CV</a>
+        </li>
+        
+        <li class="h-7 pl-2.5 pr-0 list-none">
+          <button type="button" onclick="toggleMode()" class="h-full"  aria-label="Toggle between dark and light mode">
+            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 hidden dark:inline"
+                 id="ligh-mode-button-img"
+                 alt="A sun icon for switching to light mode"
+                 src="https://antonelamiho.github.io/img/light_mode.svg">
+            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 inline dark:hidden"
+                 id="dark-mode-button-img"
+                 alt="A moon icon for switching to dark mode"
+                 src="https://antonelamiho.github.io/img/dark_mode.svg">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    </header>
+    <main class="content h-card container mt-2 m-auto
+                 leading-loose md:px-0 px-2 z-0 Page(/post/2020-12-01-r-rmarkdown/index.md)"
+          role="main">
+    
+<article class="article h-entry" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title-container">
+        <h1 class="article-title p-name" itemprop="name">Hello R Markdown</h1>
+        
+        <div class="flex justify-between items-center">
+            
+            <a class="text-lg text-gray-600 dark:text-gray-400 border-none u-url" href="https://antonelamiho.github.io/hello-r-markdown/">
+                <time itemprop="datePublished" class="dt-published"
+                    datetime="2020-12-01T21:13:14-0500"
+                    content="2020-12-01T21:13:14-0500">
+                    01/12/2020
+                </time>
+            </a>
+            
+            
+            <a class="text-gray-600 dark:text-gray-400 text-right border-none p-author h-card" rel="author" href="https://antonelamiho.github.io/" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Frida Gomam</span></a>
+            
+        </div>
+        
+    </div>
+
+    <div class="article-content e-content" itemprop="articleBody">
+        <h1 id="r-markdown">R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#447fcf">summary</span>(cars)
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##      speed           dist       </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  Min.   : 4.0   Min.   :  2.00  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  1st Qu.:12.0   1st Qu.: 26.00  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  Median :15.0   Median : 36.00  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  Mean   :15.4   Mean   : 42.98  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##  Max.   :25.0   Max.   :120.00</span>
+</span></span><span style="display:flex;"><span>fit &lt;- <span style="color:#447fcf">lm</span>(dist ~ speed, data = cars)
+</span></span><span style="display:flex;"><span>fit
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## Call:</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## lm(formula = dist ~ speed, data = cars)</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## Coefficients:</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">## (Intercept)        speed  </span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">##     -17.579        3.932</span>
+</span></span></code></pre></div><h1 id="including-plots">Including Plots</h1>
+<p>You can also embed plots. See Figure <!-- raw HTML omitted -->1<!-- raw HTML omitted --> for example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#447fcf">par</span>(mar = <span style="color:#447fcf">c</span>(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">1</span>, <span style="color:#3677a9">0</span>, <span style="color:#3677a9">1</span>))
+</span></span><span style="display:flex;"><span><span style="color:#447fcf">pie</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">c</span>(<span style="color:#3677a9">280</span>, <span style="color:#3677a9">60</span>, <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;Sky&#39;</span>, <span style="color:#ed9d13">&#39;Sunny side of pyramid&#39;</span>, <span style="color:#ed9d13">&#39;Shady side of pyramid&#39;</span>),
+</span></span><span style="display:flex;"><span>  col = <span style="color:#447fcf">c</span>(<span style="color:#ed9d13">&#39;#0292D8&#39;</span>, <span style="color:#ed9d13">&#39;#F7EA39&#39;</span>, <span style="color:#ed9d13">&#39;#C4B632&#39;</span>),
+</span></span><span style="display:flex;"><span>  init.angle = <span style="color:#3677a9">-50</span>, border = <span style="color:#6ab825;font-weight:bold">NA</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+
+    </div>
+
+    
+<ul class="list-none pl-0 font-sm align-left">
+
+<hr>
+<li class="list-none">
+    Categories:
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/categories/r">
+    <span class="tag-item dark:bg-zinc-900 dark:hover:bg-zinc-700
+                 hover:bg-zinc-200 bg-zinc-100
+                 dark:border-zinc-600 py-0.5
+                 px-1 rounded-t border-b-2 border-zinc-300
+                 hover:border-zinc-500">
+    R
+    </span>
+</a>
+</li >
+
+
+<li class="list-none">
+    Tags:
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/tags/r-markdown">
+        <span class="flex flex-row justify-start items-center
+                     dark:bg-zinc-900 dark:hover:bg-zinc-700
+                     hover:bg-zinc-200 bg-zinc-100
+                     dark:border-zinc-600 py-0.5
+                     px-1 rounded-t border-b-2 border-zinc-300
+                     hover:border-zinc-500">
+            
+            <img class="h-4 mr-2 inline" src="https://antonelamiho.github.io/images/tag_logo.svg"
+                 alt="Logo of a tag: indicates that a tag item follows.">
+            R Markdown
+        </span>
+    </a>
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/tags/plot">
+        <span class="flex flex-row justify-start items-center
+                     dark:bg-zinc-900 dark:hover:bg-zinc-700
+                     hover:bg-zinc-200 bg-zinc-100
+                     dark:border-zinc-600 py-0.5
+                     px-1 rounded-t border-b-2 border-zinc-300
+                     hover:border-zinc-500">
+            
+            <img class="h-4 mr-2 inline" src="https://antonelamiho.github.io/images/tag_logo.svg"
+                 alt="Logo of a tag: indicates that a tag item follows.">
+            plot
+        </span>
+    </a>
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/tags/regression">
+        <span class="flex flex-row justify-start items-center
+                     dark:bg-zinc-900 dark:hover:bg-zinc-700
+                     hover:bg-zinc-200 bg-zinc-100
+                     dark:border-zinc-600 py-0.5
+                     px-1 rounded-t border-b-2 border-zinc-300
+                     hover:border-zinc-500">
+            
+            <img class="h-4 mr-2 inline" src="https://antonelamiho.github.io/images/tag_logo.svg"
+                 alt="Logo of a tag: indicates that a tag item follows.">
+            regression
+        </span>
+    </a>
+    
+</li>
+
+</ul>
+
+
+
+    
+    <div class="text-neutral-500 mb-4">
+        Last modified <span itemprop="dateModified"
+                            content="2020-12-01T21:13:14-0500">
+        01/12/2020
+        </span>
+    </div>
+</article>
+
+    </main>
+    <footer class="footer container h-10 text-center mt-1">
+<hr class="my-4">
+  <ul class="pl-0 mt-1">
+    
+    <li class="ml-2 first:before:content-none before:content-['•']
+               inline-block list-none">
+      <a class="ml-2 text-neutral-800
+                dark:text-neutral-400 border-none"
+          href="https://github.com/hugcis/hugo-astatine-theme">Code</a>
+    </li>
+    <li class="ml-2 first:before:content-none before:content-['•']
+                text-neutral-800 dark:text-neutral-400 inline-block list-none">
+      <span class="ml-2">© Jack Harkness 2022</span>
+    </li>
+  </ul>
+</footer>
+
+
+  </body>
+</html>
