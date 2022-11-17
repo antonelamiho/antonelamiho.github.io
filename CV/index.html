@@ -2,9 +2,9 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1"><title>CVs - Antonela Miho</title>
-<meta property="og:title" content="CVs - Antonela Miho">
-<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1"><title>Curriculum Vitae - Antonela Miho</title>
+<meta property="og:title" content="Curriculum Vitae - Antonela Miho">
+<meta property="og:type" content="article">
 
 
 <meta property="og:image" content="img/MIHO_Antonela_Photo.jpg">
@@ -63,17 +63,17 @@
         
         <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
           <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/research/research">Research</a>
+                    hover:border-b-0" href="/research/">Research</a>
         </li>
         
         <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
           <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/teaching/courses">Teaching</a>
+                    hover:border-b-0" href="/courses/">Teaching</a>
         </li>
         
         <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
           <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/cv/cv">CV</a>
+                    hover:border-b-0" href="/cv/">CV</a>
         </li>
         
         <li class="h-7 pl-2.5 pr-0 list-none">
@@ -96,31 +96,231 @@
 
     </header>
     <main class="content h-card container mt-2 m-auto
-                 leading-loose md:px-0 px-2 z-0 Page(/cv)"
+                 leading-loose md:px-0 px-2 z-0 Page(/CV.md)"
           role="main">
     
-    
-    
-        <div class="mb-12 lg:mx-8">
-    <a href="https://antonelamiho.github.io/cv/cv/" itemprop="url"
-       class="grid grid-cols-list-item items-center pb-2 border-b-2
-             text-black dark:text-zinc-300 hover:text-neutral-500
-             dark:border-zinc-600
-             hover:dark:border-zinc-300
-             hover:dark:text-zinc-100">
+<article class="article h-entry" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title-container">
+        <h1 class="article-title p-name" itemprop="name">Curriculum Vitae</h1>
         
-            <h3 itemprop="name" class="border-none pb-0 my-6 col-span-2">Curriculum Vitae</h3>
-        
-        <div class="list-item-date col-start-4 text-right text-neutral-600 dark:text-neutral-400" itemprop="datePublished"
-            content="2022-11-16T00:00:00Z">
-            2022.11.16
+        <div class="flex justify-between items-center">
+            
+            
         </div>
-    </a>
-    
-    <meta itemprop="author" content="Jack Harkness">
+        
+    </div>
+
+    <div class="article-content e-content" itemprop="articleBody">
+        <p>Click <a href="https://www.dropbox.com/s/csnm0fuv1tw0ijd/MIHO_Antonela_CV.pdf?dl=0">here</a> to download latest CV.</p>
+<script type="text/javascript" src='/js/pdf-js/build/pdf.js'></script>
+<style>
+#the-canvas {
+  border: 1px solid black;
+  direction: ltr;
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#paginator {
+  display: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#loadingWrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+}
+
+#loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #d2d0d0;;
+  border-radius: 50%;
+  border-top-color: #383838;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+</style>
+
+<div id="paginator">
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+    &nbsp; &nbsp;
+    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+</div>
+<div id="embed-pdf-container">
+    <div id="loadingWrapper">
+      <div id="loading"></div>
+    </div>
+    <canvas id="the-canvas"></canvas>
 </div>
 
+<script type="text/javascript">
+window.onload = function() {
+
+
+var url = "https:\/\/antonelamiho.github.io\/" + 'MIHO_Antonela_CV.pdf';
+
+var hidePaginator = "" === "true";
+var hideLoader = "true" === "true";
+var selectedPageNum = parseInt("") || 1;
+
+
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/antonelamiho.github.io\/" + '/js/pdf-js/build/pdf.worker.js';
+
+
+var pdfDoc = null,
+    pageNum = selectedPageNum,
+    pageRendering = false,
+    pageNumPending = null,
+    scale = 3,
+    canvas = document.getElementById('the-canvas'),
+    ctx = canvas.getContext('2d'),
+    paginator = document.getElementById("paginator"),
+    loadingWrapper = document.getElementById('loadingWrapper');
+
+
+
+showPaginator();
+showLoader();
+
+
+
+function renderPage(num) {
+  pageRendering = true;
+  
+  pdfDoc.getPage(num).then(function(page) {
+    var viewport = page.getViewport({scale: scale});
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
     
+    var renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+    };
+    var renderTask = page.render(renderContext);
+
+    
+    renderTask.promise.then(function() {
+      pageRendering = false;
+      showContent();
+      
+      if (pageNumPending !== null) {
+        
+        renderPage(pageNumPending);
+        pageNumPending = null;
+      }
+    });
+  });
+
+  
+  document.getElementById('page_num').textContent = num;
+}
+
+
+
+function showContent() {
+  loadingWrapper.style.display = 'none';
+  canvas.style.display = 'block';
+}
+
+
+
+function showLoader() {
+  if(hideLoader) return
+  loadingWrapper.style.display = 'flex';
+  canvas.style.display = 'none';
+}
+
+
+
+function showPaginator() {
+  if(hidePaginator) return
+  paginator.style.display = 'block';
+}
+
+
+
+function queueRenderPage(num) {
+  if (pageRendering) {
+    pageNumPending = num;
+  } else {
+    renderPage(num);
+  }
+}
+
+
+
+function onPrevPage() {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(pageNum);
+}
+document.getElementById('prev').addEventListener('click', onPrevPage);
+
+
+
+function onNextPage() {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+  queueRenderPage(pageNum);
+}
+document.getElementById('next').addEventListener('click', onNextPage);
+
+
+
+pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+  pdfDoc = pdfDoc_;
+  var numPages = pdfDoc.numPages;
+  document.getElementById('page_count').textContent = numPages;
+  
+  
+  if(pageNum > numPages) {
+    pageNum = numPages
+  }
+
+  
+  renderPage(pageNum);
+});
+}
+
+</script>
+
+
+    </div>
+
+    
+
+
+    
+    <div class="text-neutral-500 mb-4">
+        Last modified <span itemprop="dateModified"
+                            content="2022-11-16T00:00:00Z">
+        16/11/2022
+        </span>
+    </div>
+</article>
 
     </main>
     <footer class="footer container h-10 text-center mt-1">

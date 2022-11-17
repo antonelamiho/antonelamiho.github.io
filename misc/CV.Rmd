@@ -1,8 +1,0 @@
----
-date: "2022-11-16"
-hideAuthor: true
-hideDate: true
-title: Curriculum Vitae
----
-
-{{< embed-pdf url="MIHO_Antonela_CV.pdf" >}}
